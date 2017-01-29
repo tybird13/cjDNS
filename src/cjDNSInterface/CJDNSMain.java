@@ -12,6 +12,7 @@ import java.util.Scanner;
  * 
  * Created Date: 01/28/2017
  * Note:    This program does not employ the javafxml MVC paradigm. 
+ * GIT:		HTTPS://github.com/tybird13/cjDNS
  * 
  */
 public class CJDNSMain{
