@@ -1,11 +1,13 @@
 package cjDNSInterface;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Scanner;
 
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -27,11 +29,16 @@ import javax.swing.JTextField;
 public class CJDNSMain{
 	// /home/tyler/Desktop/cjdroute_copy.conf
 	
-	CJDNSMain() {
+ 
+	public static void main(String[] args) {
+		// create the user interface
+
 		JFrame frame = new JFrame("cjDNS");
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		frame.setVisible(true);
-		frame.setSize(340, 280);
+		frame.setAlwaysOnTop(true);
+		frame.setAutoRequestFocus(true);
+		frame.setSize(500, 300);
 		
 		JPanel containerPanel = new JPanel();
 		containerPanel.setLayout(new BorderLayout());
@@ -45,21 +52,23 @@ public class CJDNSMain{
 		// handle the submission of the user name field
 		JButton userNameSubmitButton = new JButton("Submit");
 		
+		passUserInfoPanel.add(Box.createHorizontalStrut(30));
 		passUserInfoPanel.add(userNameLabel);
+		passUserInfoPanel.add(Box.createHorizontalStrut(10));
 		passUserInfoPanel.add(userNameField);
+		passUserInfoPanel.add(Box.createHorizontalStrut(10));
 		passUserInfoPanel.add(userNameSubmitButton);
-		
-		containerPanel.add(passUserInfoPanel, BorderLayout.NORTH);
+		passUserInfoPanel.add(Box.createHorizontalStrut(30));
+
+
+		JPanel vPanel = new JPanel();
+		vPanel.setLayout(new BoxLayout(vPanel, BoxLayout.PAGE_AXIS));
+		vPanel.add(Box.createVerticalStrut(30));
+		vPanel.add(passUserInfoPanel);
+		containerPanel.add(vPanel, BorderLayout.NORTH);
 		frame.add(containerPanel);
 
-
-	}
-
-	public static void main(String[] args) {
-		// create the uuser interface
-
-	
-	   CJDNSMain c = new CJDNSMain();
+	   
 	   
 		
 		
