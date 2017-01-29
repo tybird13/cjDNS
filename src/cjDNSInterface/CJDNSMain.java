@@ -33,41 +33,7 @@ public class CJDNSMain{
 	public static void main(String[] args) {
 		// create the user interface
 
-		JFrame frame = new JFrame("cjDNS");
-		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		frame.setVisible(true);
-		frame.setAlwaysOnTop(true);
-		frame.setAutoRequestFocus(true);
-		frame.setSize(500, 300);
-		
-		JPanel containerPanel = new JPanel();
-		containerPanel.setLayout(new BorderLayout());
-		
-		JPanel passUserInfoPanel = new JPanel();
-		passUserInfoPanel.setLayout(new BoxLayout(passUserInfoPanel, BoxLayout.LINE_AXIS));
-		
-		JLabel userNameLabel = new JLabel("Please Enter UserName:");
-		JTextField userNameField = new JTextField();
-		
-		// handle the submission of the user name field
-		JButton userNameSubmitButton = new JButton("Submit");
-		
-		passUserInfoPanel.add(Box.createHorizontalStrut(30));
-		passUserInfoPanel.add(userNameLabel);
-		passUserInfoPanel.add(Box.createHorizontalStrut(10));
-		passUserInfoPanel.add(userNameField);
-		passUserInfoPanel.add(Box.createHorizontalStrut(10));
-		passUserInfoPanel.add(userNameSubmitButton);
-		passUserInfoPanel.add(Box.createHorizontalStrut(30));
-
-
-		JPanel vPanel = new JPanel();
-		vPanel.setLayout(new BoxLayout(vPanel, BoxLayout.PAGE_AXIS));
-		vPanel.add(Box.createVerticalStrut(30));
-		vPanel.add(passUserInfoPanel);
-		containerPanel.add(vPanel, BorderLayout.NORTH);
-		frame.add(containerPanel);
-
+		UserInfoWindow uWin = new UserInfoWindow();
 	   
 	   
 		
