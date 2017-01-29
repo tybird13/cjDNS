@@ -2,15 +2,11 @@ package cjDNSInterface;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.math.BigInteger;
 import java.security.SecureRandom;
-import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,10 +22,9 @@ public class CjdnsInterfaceObject {
 	private String passKey; // the unique key ID generated for the user
 	private ArrayList<String> arrayListLines; // array to store the strings
 	
-	public CjdnsInterfaceObject(String path, String user) throws FileNotFoundException {
+	public CjdnsInterfaceObject(String path, String user) {
 		this.path = path;
 		this.file = new File(this.path);
-		
 		this.user = user;
 		
 	}
@@ -52,7 +47,7 @@ public class CjdnsInterfaceObject {
 		catch (IOException i) {
 			System.err.println("FILE NOT FOUND!");
 		}
-		return fileContents;
+		return fileContents; // fileContents is the stringbuffer that holds the text of the config file
 	}
 		
 	int locateInsertionPoint() {
