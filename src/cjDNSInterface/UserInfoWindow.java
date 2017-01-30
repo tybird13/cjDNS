@@ -51,6 +51,10 @@ public class UserInfoWindow {
 		frame.add(containerPanel);
 	
 	}
+	
+	void setLabel(){
+		 
+	}
 
 	
 }

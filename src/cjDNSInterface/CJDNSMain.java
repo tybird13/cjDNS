@@ -33,7 +33,8 @@ public class CJDNSMain{
 	public static void main(String[] args) {
 		// create the user interface
 
-		UserInfoWindow uWin = new UserInfoWindow();
+		// prompt whether to add a new user or not
+		AddNewUserPrompt uP = new AddNewUserPrompt();
 	   
 	   
 		
@@ -50,7 +51,7 @@ public class CJDNSMain{
 		
 		try { 
 			cjdns = new CjdnsInterfaceObject(file, "Tyler Dalbora"); // initialize the CjdnsInterfaceObject
-			System.out.println(cjdns.accessFile()); // access file contents and create StringBuffer
+			cjdns.accessFile(); // access file contents and create StringBuffer
 			
 			int i;
 			if ((i = cjdns.locateInsertionPoint()) > 0) {
